@@ -4,23 +4,23 @@
  * $Header: $
  */
 
-package proxy.model;
+package strategy.model;
 
 /**
  * @author <a href="mailto:bario@ssi-schaefer-noell.com">bario</a>
  * @version $Revision: $, $Date: $, $Author: $
  */
 
-public class Paragraph implements Element {
-  private String text;
+public class Table implements Element {
+  private String title;
 
-  public Paragraph(String text) {
-    this.text = text;
+  public Table(String title) {
+    this.title = title;
   }
 
   @Override
   public void print() {
-    System.out.println(text);
+    System.out.println(title);
   }
 
   @Override
@@ -31,7 +31,6 @@ public class Paragraph implements Element {
   @Override
   public void remove(Element element) {
     System.out.println("ERORR");
-
   }
 
   @Override
@@ -41,5 +40,3 @@ public class Paragraph implements Element {
   }
 
 }
-// avem un paragraph care implementeaza interfata alignedparagraph care are metoda print 
-// creem clase 

@@ -4,42 +4,42 @@
  * $Header: $
  */
 
-package proxy.model;
+package strategy.model;
 
 /**
  * @author <a href="mailto:bario@ssi-schaefer-noell.com">bario</a>
  * @version $Revision: $, $Date: $, $Author: $
  */
 
-public class Paragraph implements Element {
-  private String text;
+public class ImageProxy implements Element {
+  private String imageName;
+  Image image = null;
 
-  public Paragraph(String text) {
-    this.text = text;
+  public ImageProxy(String imageName) {
+    this.imageName = imageName;
   }
 
   @Override
   public void print() {
-    System.out.println(text);
+    if (this.image == null) {
+      this.image = new Image(this.imageName);
+    }
+    this.image.print();
   }
 
   @Override
   public void add(Element element) {
-    System.out.println("ERORR");
+    System.out.println("ERORR - IMG PROXY");
   }
 
   @Override
   public void remove(Element element) {
-    System.out.println("ERORR");
-
+    System.out.println("ERORR - IMG PROXY");
   }
 
   @Override
   public Element getElement(int index) {
-    System.out.println("ERORR");
+    System.out.println("ERORR - IMG PROXY");
     return null;
   }
-
 }
-// avem un paragraph care implementeaza interfata alignedparagraph care are metoda print 
-// creem clase 

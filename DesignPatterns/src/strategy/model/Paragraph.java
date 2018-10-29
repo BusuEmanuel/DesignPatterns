@@ -4,7 +4,7 @@
  * $Header: $
  */
 
-package proxy.model;
+package strategy.model;
 
 /**
  * @author <a href="mailto:bario@ssi-schaefer-noell.com">bario</a>
@@ -13,6 +13,15 @@ package proxy.model;
 
 public class Paragraph implements Element {
   private String text;
+  private AlignStrategy align;
+
+  public AlignStrategy getAlignStrategy() {
+    return align;
+  }
+
+  public void setAlignStrategy(AlignStrategy alignStrategy) {
+    this.align = alignStrategy;
+  }
 
   public Paragraph(String text) {
     this.text = text;
@@ -20,7 +29,11 @@ public class Paragraph implements Element {
 
   @Override
   public void print() {
-    System.out.println(text);
+    if (align != null) {
+      align.print(text);
+    } else {
+      System.out.println(text);
+    }
   }
 
   @Override
