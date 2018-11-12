@@ -23,4 +23,6 @@ public interface IBuilder {
 
   Element buildImageProxy(HashMap<String, Object> map);
 
+  Element buildSection(HashMap<String, Object> map);
+
 }

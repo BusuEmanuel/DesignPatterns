@@ -60,11 +60,4 @@ public class Section implements Element {
     }
   }
 
-  @Override
-  public void buildPart() {
-    this.buildPart();
-    for (Element element : content) {
-      element.buildPart();
-    }
-  }
 }
