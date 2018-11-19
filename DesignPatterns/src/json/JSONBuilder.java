@@ -10,12 +10,12 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import visitor.model.Element;
-import visitor.model.Image;
-import visitor.model.ImageProxy;
-import visitor.model.Paragraph;
-import visitor.model.Section;
-import visitor.model.Table;
+import singleton.model.Element;
+import singleton.model.Image;
+import singleton.model.ImageProxy;
+import singleton.model.Paragraph;
+import singleton.model.Section;
+import singleton.model.Table;
 
 public class JSONBuilder implements Builder {
 
@@ -26,6 +26,7 @@ public class JSONBuilder implements Builder {
     this.filename = filename;
   }
 
+  @Override
   public Element getResult() {
     return document;
   }
@@ -46,16 +47,19 @@ public class JSONBuilder implements Builder {
     }
   }
 
+  @Override
   public Element buildImageProxy(HashMap<String, Object> map) {
     Element imageProxy = new ImageProxy((String) map.get("url"));
     return imageProxy;
   }
 
+  @Override
   public Element buildImage(HashMap<String, Object> map) {
     Element image = new Image((String) map.get("url"));
     return image;
   }
 
+  @Override
   public Element buildTable(HashMap<String, Object> map) {
     Element table = new Table((String) map.get("url"));
     return table;

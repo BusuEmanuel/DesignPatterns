@@ -7,7 +7,7 @@ import java.util.HashMap;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
-import visitor.model.Element;
+import singleton.model.Element;
 
 public interface Builder {
 
