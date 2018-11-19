@@ -10,7 +10,7 @@ import visitor.model.Element;
 
 public class MainClass {
   public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
-    Builder jsonBuilder = new Builder("book.json");
+    JSONBuilder jsonBuilder = new JSONBuilder("book.json");
     jsonBuilder.build();
 
     Element myBook = jsonBuilder.getResult();
